@@ -12,8 +12,7 @@ const style = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    maxWith: '300px',
-    width: "auto",
+    maxWidth: '400px',
     borderRadius: '20px',
     boxShadow: 24,
     p: 4,
@@ -27,6 +26,7 @@ export default function TransitionsModal({ open, setOpen, FavouriteTokens, setFa
                 aria-labelledby="transition-modal-title"
                 aria-describedby="transition-modal-description"
                 open={open}
+                className='mx-5'
                 onClose={handleClose}
                 closeAfterTransition
                 slots={{ backdrop: Backdrop }}
@@ -37,7 +37,7 @@ export default function TransitionsModal({ open, setOpen, FavouriteTokens, setFa
                 }}
             >
                 <Fade in={open}>
-                    <Box sx={style} className="bg-white dark:bg-[#131313]">
+                    <Box sx={style} className="bg-white w-full md:w-auto dark:bg-[#131313]">
                         <Typography className='flex justify-between' id="transition-modal-title" variant="h6" component="h2">
                             <p className='text-lg font-normal text-black dark:text-white'>Select a token</p>
                             <X className='cursor-pointer text-black dark:text-white' onClick={handleClose} />
