@@ -29,7 +29,7 @@ const Header = () => {
                     <p className='font-semibold cursor-pointer ml-4 md:ml-6 text-[#3C3D3D] dark:text-white'>Swap</p>
                 </div>
                 <div className='flex items-center'>
-                    <Switch onClick={() => setDarkMode(!darkMode)} {...label} defaultChecked={!darkMode} className='filter-[#ccc]' />
+                    <Switch onClick={() => setDarkMode(!darkMode)} {...label} defaultChecked={darkMode} className='filter-[#ccc]' />
                     <div>
                         <button className='rounded-full bg-[#FFE7FF] font-semibold text-[#FC80FF] dark:bg-[#2C192C] px-3 py-2'>Connect</button>
                     </div>
