@@ -44,7 +44,7 @@ const Swap = () => {
                         setTopSelected(BottomSelected);
                         setBottomSelected(temp);
                     }}
-                    className="absolute bottom-[-20px] z-10 rounded-xl py-1 bg-[#e8e8e8] dark:bg-[#1B1B1B] border-4 border-[#ccc] dark:border-[#131313] dark:text-white"
+                    className="absolute bottom-[-20px] z-10 rounded-xl py-1 bg-[#e8e8e8] dark:bg-[#1B1B1B] border-4 border-[#fff] dark:border-[#131313] dark:text-white"
                     style={{
                         padding: '4px 6px',
                         left: '50%',
