@@ -9,33 +9,33 @@ const Swap = () => {
     const [FavouriteTokens, setFavouriteTokens] = useState([data[5], data[6], data[8], data[10]])
     const [open, setOpen] = useState(false);
     const [open1, setOpen1] = useState(false);
-    const [sellNumber, setSellNumber] = useState(0);
+    const [sellNumber, setSellNumber] = useState('');
     return (
-        <div className="mt-10 flex flex-col items-center max-w-[470px] w-full mx-auto">
+        <div className="mt-10 flex flex-col items-center mx-5 max-w-[470px] w-auto md:mx-auto">
             <div className="self-start">
-                <button className='rounded-full bg-[#F5F5F5] font-semibold text-[#7A7A7A] px-3 py-2'>Swap</button>
+                <button className='rounded-full bg-[#F5F5F5] font-semibold text-[#7A7A7A] dark:bg-[#1B1B1B] dark:text-white px-3 py-2'>Swap</button>
             </div>
-            <div className="flex relative flex-row shadow-sm justify-between items-center bg-[#F9F9F9] rounded-xl px-4 py-4 w-full mt-4 min-h-[100px]">
-                <div className="flex w-[50%] flex-col">
-                    <p className="text-[#7D7D7D]">Sell</p>
+            <div className="flex relative flex-row shadow-sm justify-between items-center bg-[#e8e8e8] dark:bg-[#1B1B1B] rounded-xl px-4 py-4 w-full mt-4 min-h-[100px]">
+                <div className="flex w-[30%] md:w-[50%] flex-col">
+                    <p className="text-[#7D7D7D] dark:text-white">Sell</p>
                     <input
                         type="text"
                         onChange={(e) => setSellNumber(e.target.value)}
                         value={sellNumber}
                         placeholder="0"
-                        className="text-3xl bg-transparent outline-none pb-5 mt-2 font-semibold text-[#CECECE]"
+                        className="text-3xl bg-transparent outline-none pb-5 mt-2 font-semibold text-[#5c5b5b] dark:text-white"
                     />
                 </div>
                 <div className="w-full flex-1 flex justify-end">
                     <div
                         onClick={() => setOpen(true)}
-                        className="bg-white shadow-sm inline-flex self-end items-center px-1 rounded-full cursor-pointer py-1 w-auto"
+                        className="bg-white dark:bg-[#131313] shadow-sm inline-flex self-end items-center px-1 rounded-full cursor-pointer py-1 w-auto"
                     >
                         <img src={topSelected.image} alt="" className="h-[35px]" />
-                        <p className="text-[#2B2C2E] font-semibold w-auto text-2xl mx-2">
+                        <p className="text-[#2B2C2E] dark:text-white font-semibold w-auto text-2xl mx-2">
                             {topSelected.currency}
                         </p>
-                        <ChevronDown className="w-auto" />
+                        <ChevronDown className="w-auto dark:text-white" />
                     </div>
                 </div>
                 <button
@@ -44,9 +44,8 @@ const Swap = () => {
                         setTopSelected(BottomSelected);
                         setBottomSelected(temp);
                     }}
-                    className="absolute bottom-[-20px] z-10 rounded-xl py-1 bg-[#F9F9F9]"
+                    className="absolute bottom-[-20px] z-10 rounded-xl py-1 bg-[#e8e8e8] dark:bg-[#1B1B1B] border-4 border-[#ccc] dark:border-[#131313] dark:text-white"
                     style={{
-                        border: '4px solid #fff',
                         padding: '4px 6px',
                         left: '50%',
                         transform: 'translateX(-50%)',
@@ -55,31 +54,31 @@ const Swap = () => {
                     <ArrowDown className="w-[18px]" />
                 </button>
             </div>
-            <div className="flex relative flex-row shadow-sm justify-between items-center bg-[#F9F9F9] rounded-xl px-4 pb-4 w-full mt-2 min-h-[100px]">
-                <div className="flex w-[50%] flex-col">
-                    <p className="text-[#7D7D7D]">Buy</p>
+            <div className="flex relative flex-row shadow-sm justify-between items-center bg-[#e8e8e8] dark:bg-[#1B1B1B] rounded-xl px-4 pb-4 w-full mt-2 min-h-[100px]">
+                <div className="flex w-[30%] md:w-[50%] flex-col">
+                    <p className="text-[#7D7D7D] dark:text-white">Buy</p>
                     <input
                         type="text"
                         value={sellNumber * BottomSelected.price}
                         disabled
                         placeholder="0"
-                        className="text-3xl bg-transparent outline-none pb-5 mt-2 font-semibold text-[#CECECE]"
+                        className="text-3xl bg-transparent outline-none pb-5 mt-2 font-semibold text-[#5c5b5b] dark:text-white"
                     />
                 </div>
                 <div className="w-full flex-1 flex justify-end">
                     <div
                         onClick={() => setOpen1(true)}
-                        className="bg-white shadow-sm inline-flex self-end items-center px-1 rounded-full cursor-pointer py-1 w-auto"
+                        className="bg-white dark:bg-[#131313] shadow-sm inline-flex self-end items-center px-1 rounded-full cursor-pointer py-1 w-auto"
                     >
                         <img src={BottomSelected.image} alt="" className="h-[35px]" />
-                        <p className="text-[#2B2C2E] font-semibold w-auto text-2xl mx-2">
+                        <p className="text-[#2B2C2E] dark:text-white font-semibold w-auto text-2xl mx-2">
                             {BottomSelected.currency}
                         </p>
-                        <ChevronDown className="w-auto" />
+                        <ChevronDown className="w-auto dark:text-white" />
                     </div>
                 </div>
             </div>
-            <button className='mt-2 text-xl w-full h-[60px] rounded-lg bg-[#FFE7FF] font-bold text-[#F481FA] px-3 py-2'>Connect wallet</button>
+            <button className='mt-2 text-xl w-full h-[60px] rounded-lg font-semibold bg-[#edc5ea] dark:bg-[#311C31] dark:text-[#F476FA] px-3 py-2'>Connect wallet</button>
 
             <TransitionsModal open={open} setOpen={setOpen} FavouriteTokens={FavouriteTokens} setFavouriteTokens={setFavouriteTokens} setToken={setTopSelected} />
             <TransitionsModal open={open1} setOpen={setOpen1} FavouriteTokens={FavouriteTokens} setFavouriteTokens={setFavouriteTokens} setToken={setBottomSelected} />
